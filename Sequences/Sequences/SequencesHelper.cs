@@ -22,7 +22,7 @@ namespace Sequences
                 throw new ArgumentNullException("The values should be not nullable");
             if (nElements <= 0)
                 throw new ArgumentOutOfRangeException("The number of elements should be greather than 0");
-            List<int> sortedValues = values.OrderByDescending(x => x).ToList();
+            List<int> sortedValues = values.Distinct().OrderByDescending(x => x).ToList();
             int pos = 0;
             while ((pos + nElements - 1) < sortedValues.Count)
             {
@@ -45,7 +45,7 @@ namespace Sequences
                 throw new ArgumentNullException("The values should be not nullable");
             if (values.Count == 0)
                 return false;
-            List<int> sortedValues = values.OrderByDescending(x => x).ToList();
+            List<int> sortedValues = values.Distinct().OrderByDescending(x => x).ToList();
 
             for (int i = 1; i < values.Count; i++)
             {
