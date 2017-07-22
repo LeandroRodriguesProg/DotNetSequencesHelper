@@ -27,7 +27,7 @@ namespace Sequences
             while ((pos + nElements - 1) < sortedValues.Count)
             {
                 if (sortedValues[pos] - sortedValues[pos + nElements - 1] + 1 == nElements)
-                    return sortedValues.GetRange(pos, pos + nElements);
+                    return sortedValues.GetRange(pos, nElements);
                 pos++;
             }
             return null;
